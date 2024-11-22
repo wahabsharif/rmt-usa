@@ -12,6 +12,7 @@ export default {
       colors: {
         thDarkBlue: "#013550",
         thLightBlue: "#00b6c6",
+        thRed: "#DC3332",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
