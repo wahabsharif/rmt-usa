@@ -9,8 +9,12 @@ const OurServices: React.FC = () => {
   return (
     <div className="py-10">
       <div className="font-bold text-center mb-5">
-        <h2 className="text-6xl text-thRed tracking-wider">Our Services</h2>
-        <p className="text-3xl">Elevate your expectations with our services.</p>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl text-thRed tracking-wider">
+          Our Services
+        </h2>
+        <p className="text-2xl md:text-4xl lg:text-5xl">
+          Elevate your expectations with our services.
+        </p>
       </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
