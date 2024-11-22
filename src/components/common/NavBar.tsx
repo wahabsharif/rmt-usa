@@ -7,6 +7,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiArrowSortedUp } from "react-icons/ti";
 import ThemeToggle from "./ThemeToggle";
+import GetQuote from "./GetQuote";
 
 const NavBar: React.FC = () => {
   const [submenuOpenIndex, setSubmenuOpenIndex] = useState<number | null>(null);
@@ -98,12 +99,20 @@ const NavBar: React.FC = () => {
         </div>
 
         {/* Right Side: Button */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 200 }}
-        >
-          <ThemeToggle />
-        </motion.div>
+        <div className="flex items-center space-x-2">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <ThemeToggle />
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <GetQuote />
+          </motion.div>
+        </div>
       </div>
     </nav>
   );

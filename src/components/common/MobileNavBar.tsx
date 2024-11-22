@@ -9,6 +9,7 @@ import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { ImCross } from "react-icons/im";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { motion, AnimatePresence } from "framer-motion";
+import GetQuote from "./GetQuote";
 
 const MobileNavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -125,6 +126,7 @@ const MobileNavBar: React.FC = () => {
                   {item.submenu && renderSubMenu(item.submenu, index)}
                 </li>
               ))}
+              <GetQuote />
             </ul>
           </motion.div>
         )}

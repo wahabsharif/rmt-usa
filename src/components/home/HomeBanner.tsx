@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import GetQuote from "../common/GetQuote";
 
 const HomeBanner: React.FC = () => {
   return (
@@ -42,18 +43,13 @@ const HomeBanner: React.FC = () => {
           commercial reality in the medical innovation landscape.
         </motion.p>
 
-        <div className="flex items-center space-x-4">
-          {/* Animated Button 1 */}
-          <motion.button
-            className="px-6 py-2 bg-thDarkBlue text-white font-semibold rounded-full hover:text-gray-950 hover:bg-thLightBlue transition duration-300"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            Get Started
-          </motion.button>
-
-          {/* Animated Button 2 (Link) */}
+        <motion.div
+          className="flex items-center space-x-4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <GetQuote />
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -61,12 +57,12 @@ const HomeBanner: React.FC = () => {
           >
             <Link
               href="#"
-              className="px-6 py-2 text-black dark:text-white font-semibold rounded-full hover:text-white hover:bg-thDarkBlue border-2 border-thDarkBlue transition duration-300"
+              className="px-6 py-2 hover:border-2 hover:border-thDarkBlue hover:bg-transparent hover:text-black hover:dark:text-white text-white font-semibold rounded-xl bg-thDarkBlue transition ease-in-out duration-500"
             >
               Contact Us
             </Link>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
