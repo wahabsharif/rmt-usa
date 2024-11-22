@@ -2,31 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  /* Define custom colors for normal mode */
-  :root {
-    --color-normal-background: #ffffff; /* Example light background color */
-    --color-normal-text: #181818; /* Example text color */
-  }
-
-  /* Define custom colors for dark mode */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-dark-background: #181818; /* Example dark background color */
-      --color-dark-text: #ffffff; /* Example light text color for dark mode */
-    }
-  }
+html.dark body {
+  background-color: #111827;
+  color: #f3f4f6;
 }
 
 body {
+  padding: 1rem;
+  height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--color-normal-background);
-  color: var(--color-normal-text);
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--color-dark-background);
-    color: var(--color-dark-text);
-  }
+  color: #111827;
+  background-color: #f3f4f6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }

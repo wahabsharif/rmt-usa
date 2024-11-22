@@ -38,7 +38,7 @@ const ThemeToggle = () => {
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.2 }}
           >
-            <LuSunMedium size={24} />
+            <LuSunMedium size={24} className="text-white" />
           </motion.div>
         ) : (
           <motion.div
