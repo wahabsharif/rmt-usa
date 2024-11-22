@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const SecondBanner: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -74,6 +75,19 @@ const SecondBanner: React.FC = () => {
                 effective responses to our clients’ needs, cultivating trust and
                 confidence in our services.
               </p>
+            </div>
+            <div className="flex items-center">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <Link
+                  href={"#"}
+                  className=" px-3 py-2 text-white bg-thDarkBlue rounded-xl"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>
