@@ -4,7 +4,6 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import Image from "next/image";
 
 const SecondBanner: React.FC = () => {
   // Use Intersection Observer and Framer Motion Controls
@@ -48,40 +47,40 @@ const SecondBanner: React.FC = () => {
           }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Image
-            src="/images/home/sec-banner-image.jpg"
-            alt="Descriptive alt text"
-            className="flex-shrink-0 w-[250px] sm:w-[300px] lg:w-[350px] object-cover h-[300px] sm:h-[350px] lg:h-[400px] rounded-lg shadow-md"
-            width={1000}
-            height={1000}
-          />
           <div className="space-y-5 text-center sm:text-left">
-            <p className="text-base sm:text-lg text-gray-500">
+            <p className="text-center sm:text-lg text-gray-500">
               At Revive Medical Technologies, we stand at the forefront of
               medical innovation, driven by a passion to transform ideas into
               reality.
             </p>
-            <div>
-              <span className="text-thRed font-bold uppercase block">
-                Leading Expertise
-              </span>
-              <p className="text-sm sm:text-base">
-                Our company’s cutting-edge knowledge and proficiency in the
-                field, enabling us to maintain a competitive edge and deliver
-                the most innovative solutions to our clients.
-              </p>
+            <div className="flex flex-col sm:flex-row items-center">
+              {/* Left Section */}
+              <div className="flex-1 sm:pr-4 sm:border-r dark:border-gray-300 border-gray-900 dark pb-4 sm:pb-0">
+                <span className="text-thRed font-bold uppercase block">
+                  Leading Expertise
+                </span>
+                <p className="text-sm sm:text-base">
+                  Our company’s cutting-edge knowledge and proficiency in the
+                  field, enabling us to maintain a competitive edge and deliver
+                  the most innovative solutions to our clients.
+                </p>
+              </div>
+
+              {/* Right Section */}
+              <div className="flex-1 sm:pl-4">
+                <span className="text-thRed font-bold uppercase block">
+                  Reliable Solutions
+                </span>
+                <p className="text-sm sm:text-base">
+                  Our company’s dedication to consistently offer dependable and
+                  effective responses to our clients’ needs, cultivating trust
+                  and confidence in our services.
+                </p>
+              </div>
             </div>
-            <div>
-              <span className="text-thRed font-bold uppercase block">
-                Reliable Solutions
-              </span>
-              <p className="text-sm sm:text-base">
-                Our company’s dedication to consistently offer dependable and
-                effective responses to our clients’ needs, cultivating trust and
-                confidence in our services.
-              </p>
-            </div>
-            <div className="flex items-center">
+
+            {/* Centered Button */}
+            <div className="flex justify-center mt-6">
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
