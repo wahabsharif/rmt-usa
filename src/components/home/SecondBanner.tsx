@@ -1,15 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import React, { useState } from "react";
-import { FaPlay } from "react-icons/fa6";
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import Image from "next/image";
 
 const SecondBanner: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   // Use Intersection Observer and Framer Motion Controls
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -21,14 +18,6 @@ const SecondBanner: React.FC = () => {
     }
   }, [controls, inView]);
 
-  const handlePlayClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <section
       ref={ref}
@@ -36,7 +25,7 @@ const SecondBanner: React.FC = () => {
     >
       {/* Left Section: Heading and Paragraph */}
       <motion.div
-        className="lg:w-1/2 space-y-6"
+        className="space-y-6"
         initial="hidden"
         animate={controls}
         variants={{
@@ -62,7 +51,7 @@ const SecondBanner: React.FC = () => {
           <Image
             src="/images/home/sec-banner-image.jpg"
             alt="Descriptive alt text"
-            className="w-full sm:w-[250px] lg:w-[300px] object-cover h-[350px] sm:h-[400px] lg:h-[450px] rounded-lg shadow-md"
+            className="flex-shrink-0 w-[250px] sm:w-[300px] lg:w-[350px] object-cover h-[300px] sm:h-[350px] lg:h-[400px] rounded-lg shadow-md"
             width={1000}
             height={1000}
           />
@@ -99,7 +88,7 @@ const SecondBanner: React.FC = () => {
               >
                 <Link
                   href={"#"}
-                  className=" px-3 py-2 text-white bg-thDarkBlue rounded-xl"
+                  className="px-3 py-2 text-white bg-thDarkBlue rounded-xl"
                 >
                   Learn More
                 </Link>
@@ -108,72 +97,6 @@ const SecondBanner: React.FC = () => {
           </div>
         </motion.div>
       </motion.div>
-
-      {/* Right Section: Image with Play Button */}
-      <motion.div
-        className="lg:w-1/2 relative"
-        initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, scale: 0.9 },
-          visible: { opacity: 1, scale: 1 },
-        }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-      >
-        <Image
-          src="/images/home/sec-banner-video-image.jpg"
-          alt="Descriptive alt text"
-          className="w-full rounded-lg shadow-md"
-          width={1000}
-          height={1000}
-        />
-        {/* Play Button */}
-        <motion.button
-          onClick={handlePlayClick}
-          className="absolute inset-0 flex items-center justify-center"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <FaPlay className="text-5xl sm:text-7xl lg:text-9xl text-white" />
-        </motion.button>
-      </motion.div>
-
-      {/* Modal for YouTube Video */}
-      {isModalOpen && (
-        <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.div
-            className="relative w-full sm:w-4/5 lg:w-2/3 max-h-[90vh] overflow-auto"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 px-3 py-2 bg-thLightBlue rounded-full text-white text-lg sm:text-2xl"
-            >
-              ✕
-            </button>
-            {/* YouTube Video */}
-            <iframe
-              width="100%"
-              height="315px"
-              className="sm:h-[400px] lg:h-[500px] rounded-lg"
-              src="https://www.youtube.com/embed/FxDgF5jEThc"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
-        </motion.div>
-      )}
     </section>
   );
 };
