@@ -10,7 +10,7 @@ const ClientPartnersCard = ({ img, name }: { img: string; name: string }) => {
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl p-4 flex flex-col items-center", // Make it a flex container with vertical alignment
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl p-4 flex flex-col items-center",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -25,8 +25,6 @@ const ClientPartnersCard = ({ img, name }: { img: string; name: string }) => {
         src={`/images/clients-partners/${img}`}
       />
       <figcaption className="text-md font-medium dark:text-white text-center">
-        {" "}
-        {/* Center-align text */}
         {name}
       </figcaption>
     </figure>
@@ -35,7 +33,7 @@ const ClientPartnersCard = ({ img, name }: { img: string; name: string }) => {
 
 export function OurClientsPartners() {
   return (
-    <div className="relative flex mb-8 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+    <div className="relative flex mb-8 w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
       <h2 className="text-3xl md:text-4xl lg:text-5xl text-center text-thRed tracking-wider my-5">
         Our Clients and Partners
       </h2>{" "}

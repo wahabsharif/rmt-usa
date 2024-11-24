@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear(); // Get the current year
 
   return (
-    <footer>
+    <footer className="mt-10">
       <div className="container mx-auto p-6 bg-thLightBlue dark:bg-thDarkBlue rounded-xl grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: Logo and Paragraph */}
         <div className="space-y-4">
