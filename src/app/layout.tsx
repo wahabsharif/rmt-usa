@@ -5,6 +5,7 @@ import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
 import Footer from "@/components/common/Footer";
 import ScrollProgressBar from "@/components/common/ScrollProgressBar";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ScrollProgressBar />
+        <ScrollToTop />
         <NavBar />
         <MobileNavBar />
         {children}
