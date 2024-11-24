@@ -3,15 +3,23 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 
 const SecondBanner: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Use Intersection Observer to detect when the component is in view
+  // Use Intersection Observer and Framer Motion Controls
+  const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // Trigger animations when the component is in view
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   const handlePlayClick = () => {
     setIsModalOpen(true);
@@ -29,8 +37,12 @@ const SecondBanner: React.FC = () => {
       {/* Left Section: Heading and Paragraph */}
       <motion.div
         className="lg:w-1/2 space-y-6"
-        initial={{ opacity: 0, x: -50 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
         transition={{ duration: 0.8 }}
       >
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center lg:text-left leading-tight">
@@ -39,9 +51,13 @@ const SecondBanner: React.FC = () => {
         </h2>
         <motion.div
           className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <Image
             src="/images/home/sec-banner-image.jpg"
@@ -96,8 +112,12 @@ const SecondBanner: React.FC = () => {
       {/* Right Section: Image with Play Button */}
       <motion.div
         className="lg:w-1/2 relative"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, scale: 0.9 },
+          visible: { opacity: 1, scale: 1 },
+        }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <Image
