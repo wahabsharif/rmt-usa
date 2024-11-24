@@ -36,7 +36,7 @@ const ClientPartnersCard = ({ img, name }: { img: string; name: string }) => {
 export function OurClientsPartners() {
   return (
     <div className="relative flex mb-8 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl text-thRed tracking-wider my-5">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl text-center text-thRed tracking-wider my-5">
         Our Clients and Partners
       </h2>{" "}
       <Marquee pauseOnHover className="[--duration:20s]">
