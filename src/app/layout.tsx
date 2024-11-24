@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
 import Footer from "@/components/common/Footer";
+import ScrollProgressBar from "@/components/common/ScrollProgressBar";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollProgressBar />
         <NavBar />
         <MobileNavBar />
         {children}
