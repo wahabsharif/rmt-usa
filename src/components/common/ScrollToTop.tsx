@@ -42,7 +42,7 @@ const ScrollToTop: React.FC = () => {
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
-      className="fixed bottom-8 right-8 p-4 bg-thDarkBlue w-15 h-15 bg-opacity-50 text-white rounded-full shadow-lg border-thRed border-2 focus:outline-none z-50 backdrop-blur-sm"
+      className="fixed bottom-4 right-4 p-4 bg-thDarkBlue w-15 h-15 bg-opacity-50 text-white rounded-full shadow-lg border-thRed border-2 focus:outline-none z-50 backdrop-blur-sm"
     >
       <MdOutlineKeyboardDoubleArrowUp />
     </motion.button>
