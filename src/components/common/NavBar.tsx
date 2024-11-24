@@ -80,7 +80,7 @@ const NavBar: React.FC = () => {
                             scale: 1.1,
                           }}
                           transition={{ type: "spring", stiffness: 200 }}
-                          className="rounded-lg shadow-md bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md "
+                          className="bg-gray-100 dark:bg-gray-800 backdrop-blur-md rounded-xl shadow-lg "
                         >
                           <Link
                             href={submenuItem.href}
