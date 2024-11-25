@@ -37,3 +37,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #013550;
 }
+
+.grad-text {
+  background: linear-gradient(#00b6c6, #013550, #dc3332);
+  -webkit-background-clip: text;
+  color: transparent;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); Shadow */
+  /* -webkit-text-stroke: 1px #000000; Black stroke */
+}

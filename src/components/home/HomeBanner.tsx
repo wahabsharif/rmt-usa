@@ -9,22 +9,19 @@ const HomeBanner: React.FC = () => {
     <div className="relative w-full h-screen overflow-hidden flex items-center">
       {/* Video Background */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-60 dark:opacity-40"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-40 dark:opacity-20"
         autoPlay
         loop
         muted
       >
-        <source
-          src="/videos/stock-footage-future-hospitals-and-medical-technology.webm"
-          type="video/webm"
-        />
+        <source src="/videos/home-banner-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-10 max-w-lg ml-8 text-white">
+      <div className="relative z-10 ml-8 text-white">
         {/* Animated Heading */}
         <motion.h1
-          className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-thRed"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-thRed"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
