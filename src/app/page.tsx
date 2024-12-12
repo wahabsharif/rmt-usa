@@ -1,4 +1,6 @@
+import About from "@/components/home/About";
 import Features from "@/components/home/Features";
+// import HomeBannerTwo from "@/components/home/HomeBannerTwo";
 import HomeBanner from "@/components/home/HomeBanner";
 // import HomeVideo from "@/components/home/HomeVideo";
 import { OurClientsPartners } from "@/components/home/OurClientsPartners";
@@ -10,6 +12,8 @@ export default function Home() {
   return (
     <>
       <HomeBanner />
+      {/* <HomeBannerTwo /> */}
+      <About />
       <SecondBanner />
       <OurServices />
       <Features />

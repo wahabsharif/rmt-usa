@@ -33,22 +33,23 @@ function HomeBannerTwo() {
       <div className="relative z-10 max-w-lg mx-4 sm:mx-8 lg:ml-8 text-white text-center lg:text-left">
         {/* Animated Heading */}
         <motion.h1
-          className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-thRed"
+          className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4 text-thRed"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          CONCEPTION TO COMMERCIALIZATION
+          CONCEPTION TO
+          <br /> OMMERCIALIZATION
         </motion.h1>
 
         {/* Animated Paragraph */}
         <motion.p
-          className="text-sm md:text-md lg:text-lg mb-6 dark:text-gray-100 text-gray-950"
+          className="text-sm md:text-md lg:text-lg mb-6 w-full dark:text-gray-100 text-gray-950"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Your complete journey partner from conceptualization to full-scale
+          Your complete journey partner from conceptualization to full scale
           commercial reality in the medical innovation landscape.
         </motion.p>
 
@@ -76,7 +77,7 @@ function HomeBannerTwo() {
       </div>
 
       {/* Image Slideshow with Animated Strips */}
-      <div className="relative w-full lg:w-1/2 sm:w-[80%] h-96 sm:h-[450px] lg:h-[500px] xl:h-[600px] overflow-hidden flex items-center justify-center mt-8 lg:mt-0">
+      <div className="relative w-full lg:w-1/2 sm:w-[80%] h-96 sm:h-[450px] lg:h-[500px] overflow-hidden flex items-center justify-center mt-8 lg:mt-0">
         <div className="relative w-full h-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-none overflow-hidden">
           {/* Image */}
           <AnimatePresence>
